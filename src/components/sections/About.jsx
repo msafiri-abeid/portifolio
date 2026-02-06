@@ -1,8 +1,33 @@
 import { RevealOnScroll } from "../RevealOnScroll";
 
 export const About = () => {
-    const frontEndSkills = ["Tailwind", "React"]
-    const backEndSkills = ["Nodejs"]
+    const programmingLanguages = ["JavaScript", "SQL"]
+    const frontEnd = ["HTML5", "CSS3", "React"]
+    const backEnd = ["Node.js", "Express.js"]
+    const databases = ["MySQL", "MongoDB"]
+    const developerTools = ["Git", "GitHub", "VS Code", "Postman"]
+    const systemAdministration = ["User Access Management", "System Monitoring", "Incident Resolution", "Monitoring Tools"]
+    const interPersonalSkills = ["Problem-Solving & Analytical Thinking", "Effective Communication", "Collaboration", "Adaptability & Continuous Learning"]
+
+        // Intersection Observer for scroll animations
+    const observerOptions = {
+        root: null,
+        rootMargin: '0px',
+        threshold: 0.1
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+            }
+        });
+    }, observerOptions);
+
+    // Observe elements for animation
+    document.querySelectorAll('.stat').forEach(stat => {
+        observer.observe(stat);
+    });
 
     return (
         <section
@@ -11,22 +36,70 @@ export const About = () => {
         >
             <RevealOnScroll>
             <div className="max-w-3xl mx-auto px-4">
-                <h2 className="text-center text-3xl font-bold mb-8 bg-linear-to-r from-blue-500 to-cyan-400 bg-clip-text text-transparent">
+                <h2 className="text-center text-3xl font-bold mb-8 bg-[#3498db] bg-clip-text text-transparent">
                     {" "}
                     About Me
                 </h2>
-                <div className="rounded-xl p-8 border border-white/10 hover:-translate-y-1 transition-all">
+                <div className="rounded-xl p-8 text-center border border-white/10 hover:-translate-y-1 transition-all">
                     <p className="text-gray-300 mb-6">
-                        I'm IT professional with over 3 years of experience in providing technical support, managing ICT infrastructure, and ensuring system availability. Skilled in web development, incident management, user support, and system monitoring, with a strong background in digital systems administration and access management. Proven ability to develop websites and resolve technical issues while maintaining high service levels. Adept at collaborating with cross functional teams to deliver seamless IT solutions. 
+                        I am a dedicated IT professional with over 3 years of experience in providing technical support, managing ICT infrastructure, and ensuring system availability. My expertise spans across web development, incident management, user support, and system monitoring.
                     </p>
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <p className="text-gray-300 mb-6">
+                        I have a strong background in digital systems administration and access management, with proven ability to develop websites and resolve technical issues while maintaining high service levels.
+                    </p>
+
+                    <div className="grid grid-cols-1 gap-6">
                         <div className="rounded-xl p-6 hover:-translate-y-1 transition-all">
-                            <h3 className="text-xl mb-4 font-bold">Frontend</h3>
-                            <div className="flex flex-wrap gap-2">
-                                { frontEndSkills.map((tech,key) => (
+                            <h3 className="text-xl mb-4 font-bold">Programming Languages</h3>
+                            <div className="flex flex-wrap justify-center gap-2">
+                                { programmingLanguages.map((lang,key) => (
                                     <span
                                         key={key}
-                                        className="bg-blue-500/10 text-blue-500 py-1 px-3 rounded-full text-sm hover:bg-blue-500/20 hover:shadow-[0_2px_8px_rgba(59,130,246,0.2)] transition"
+                                        className="bg-blue-500/10 text-[#3498db] py-1 px-3 rounded-full text-sm hover:bg-blue-500/20 hover:shadow-[0_2px_8px_rgba(59,130,246,0.2)] transition"
+                                    >
+                                        {lang}
+                                    </span>
+                                )) }
+                            </div>
+                        </div>
+
+                        <div className="flex flex-wrap justify-center gap-2">
+                            <div className="rounded-xl p-6 hover:-translate-y-1 transition-all">
+                                <h3 className="text-xl mb-4 font-bold">Frontend</h3>
+                                <div className="flex flex-wrap justify-center gap-2">
+                                    { frontEnd.map((tech,key) => (
+                                        <span
+                                            key={key}
+                                            className="bg-blue-500/10 text-[#3498db] py-1 px-3 rounded-full text-sm hover:bg-blue-500/20 hover:shadow-[0_2px_8px_rgba(59,130,246,0.2)] transition"
+                                        >
+                                            {tech}
+                                        </span>
+                                    )) }
+                                </div>
+                            </div>
+
+                            <div className="rounded-xl p-6 hover:-translate-y-1 transition-all">
+                                <h3 className="text-xl mb-4 font-bold">Backend</h3>
+                                <div className="flex flex-wrap justify-center gap-2">
+                                    { backEnd.map((tech,key) => (
+                                        <span
+                                            key={key}
+                                            className="bg-blue-500/10 text-[#3498db] py-1 px-3 rounded-full text-sm hover:bg-blue-500/20 hover:shadow-[0_2px_8px_rgba(59,130,246,0.2)] transition"
+                                        >
+                                            {tech}
+                                        </span>
+                                    )) }
+                                </div>
+                            </div>
+                        </div>
+
+                        <div className="rounded-xl p-6 hover:-translate-y-1 transition-all">
+                            <h3 className="text-xl mb-4 font-bold">Database</h3>
+                            <div className="flex flex-wrap justify-center gap-2">
+                                { databases.map((tech,key) => (
+                                    <span
+                                        key={key}
+                                        className="bg-blue-500/10 text-[#3498db] py-1 px-3 rounded-full text-sm hover:bg-blue-500/20 hover:shadow-[0_2px_8px_rgba(59,130,246,0.2)] transition"
                                     >
                                         {tech}
                                     </span>
@@ -35,21 +108,65 @@ export const About = () => {
                         </div>
 
                         <div className="rounded-xl p-6 hover:-translate-y-1 transition-all">
-                            <h3 className="text-xl mb-4 font-bold">Backend</h3>
-                            <div className="flex flex-wrap gap-2">
-                                { backEndSkills.map((tech,key) => (
+                            <h3 className="text-xl mb-4 font-bold">Version Control & Tools</h3>
+                            <div className="flex flex-wrap justify-center gap-2">
+                                { developerTools.map((tool,key) => (
                                     <span
                                         key={key}
-                                        className="bg-blue-500/10 text-blue-500 py-1 px-3 rounded-full text-sm hover:bg-blue-500/20 hover:shadow-[0_2px_8px_rgba(59,130,246,0.2)] transition"
+                                        className="bg-blue-500/10 text-[#3498db] py-1 px-3 rounded-full text-sm hover:bg-blue-500/20 hover:shadow-[0_2px_8px_rgba(59,130,246,0.2)] transition"
                                     >
-                                        {tech}
+                                        {tool}
                                     </span>
                                 )) }
                             </div>
-                        </div>                        
+                        </div>   
+
+                        <div className="rounded-xl p-6 hover:-translate-y-1 transition-all">
+                            <h3 className="text-xl mb-4 font-bold">Systems Administration</h3>
+                            <div className="flex flex-wrap justify-center gap-2">
+                                { systemAdministration.map((skill,key) => (
+                                    <span
+                                        key={key}
+                                        className="bg-blue-500/10 text-[#3498db] py-1 px-3 rounded-full text-sm hover:bg-blue-500/20 hover:shadow-[0_2px_8px_rgba(59,130,246,0.2)] transition"
+                                    >
+                                        {skill}
+                                    </span>
+                                )) }
+                            </div>
+                        </div> 
+
+                        <div className="rounded-xl p-6 hover:-translate-y-1 transition-all">
+                            <h3 className="text-xl mb-4 font-bold">Interpersonal Skills</h3>
+                            <div className="flex flex-wrap justify-center gap-2">
+                                { interPersonalSkills.map((skill,key) => (
+                                    <span
+                                        key={key}
+                                        className="bg-blue-500/10 text-[#3498db] py-1 px-3 rounded-full text-sm hover:bg-blue-500/20 hover:shadow-[0_2px_8px_rgba(59,130,246,0.2)] transition"
+                                    >
+                                        {skill}
+                                    </span>
+                                )) }
+                            </div>
+                        </div> 
+
                     </div>
 
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8">
+                    <div className="flex justify-center gap-10 my-10">
+                        <div className="stat">
+                            <h4>3+</h4>
+                            <p>Years Experience</p>
+                        </div>
+                        <div className="stat">
+                            <h4>10+</h4>
+                            <p>Projects Completed</p>
+                        </div>
+                        <div className="stat">
+                            <h4>100%</h4>
+                            <p>Client Satisfaction</p>
+                        </div>
+                    </div>
+
+                    {/* <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8">
                         <div className="p-6 rounded-xl border border-white/10 hover:-translate-y-1 transition-all">
                                 <h3 className="text-xl mb-4 font-bold">🏫 Education</h3>
                                 <ul className="list-disc list-inside text-gray-300 space-y-2">
@@ -69,7 +186,7 @@ export const About = () => {
                                 </div>
                         </div>  
 
-                    </div>
+                    </div> */}
                 </div>
             </div>
             </RevealOnScroll>
