@@ -1,60 +1,71 @@
 export const MobileMenu = ({ menuOpen, setMenuOpen }) => {
-    return(
-        <div className={`fixed top-0 left-0 w-full z-40 bg-[rgba(10,10,10,0.8)] flex flex-col items-center justify-center transition-all duration-300 ease-in-out ${menuOpen ? "h-screen opacity-100 pointer-events-auto" : "h-0 opacity-0 pointer-events-none"}`}>
-            <button
-                arial-label="Close Menu"
-                onClick={() => setMenuOpen(false)} 
-                className="absolute top-6 right-6 text-white text-3xl focus:outline-none cursor-pointer">
-                &times;
-            </button>
+  return (
+    <div
+      className={`fixed top-0 left-0 w-full z-40 bg-[rgba(10,10,10,0.8)] backdrop-blur-lg flex flex-col items-center justify-center transition-all duration-300 ease-in-out ${menuOpen ? "h-screen opacity-100 pointer-events-auto" : "h-0 opacity-0 pointer-events-none"}`}
+    >
+      <button
+        arial-label="Close Menu"
+        onClick={() => setMenuOpen(false)}
+        className="absolute top-6 right-6 text-white text-3xl hover:text-[#3498db] focus:outline-none cursor-pointer"
+      >
+        &times;
+      </button>
 
-            <a
-                href="#home"
-                onClick={() => setMenuOpen(false)}
-                className={`text-2xl font-semibold text-white my-4 transform transition-transform duration-300
+      <a
+        href="#home"
+        onClick={() => setMenuOpen(false)}
+        className={`text-2xl font-semibold text-white hover:text-[#3498db] my-4 transform transition-transform duration-300
                     ${
-                        menuOpen ? "opacity-100 translate-y-0" : "opacity-0 translate-y-5"
+                      menuOpen
+                        ? "opacity-100 translate-y-0"
+                        : "opacity-0 translate-y-5"
                     }
                     `}
-            >
-                Home
-            </a>
+      >
+        Home
+      </a>
 
-            <a
-                href="#about"
-                onClick={() => setMenuOpen(false)}
-                className={`text-2xl font-semibold text-white my-4 transform transition-transform duration-300
+      <a
+        href="#about"
+        onClick={() => setMenuOpen(false)}
+        className={`text-2xl font-semibold text-white hover:text-[#3498db] my-4 transform transition-transform duration-300
                     ${
-                        menuOpen ? "opacity-100 translate-y-0" : "opacity-0 translate-y-5"
+                      menuOpen
+                        ? "opacity-100 translate-y-0"
+                        : "opacity-0 translate-y-5"
                     }
                     `}
-            >
-                About
-            </a>            
+      >
+        About
+      </a>
 
-            <a
-                href="#project"
-                onClick={() => setMenuOpen(false)}
-                className={`text-2xl font-semibold text-white my-4 transform transition-transform duration-300
+      <a
+        href="#projects"
+        onClick={() => setMenuOpen(false)}
+        className={`text-2xl font-semibold text-white hover:text-[#3498db] my-4 transform transition-transform duration-300
                     ${
-                        menuOpen ? "opacity-100 translate-y-0" : "opacity-0 translate-y-5"
+                      menuOpen
+                        ? "opacity-100 translate-y-0"
+                        : "opacity-0 translate-y-5"
                     }
                     `}
-            >
-                Project
-            </a> 
+      >
+        Projects
+      </a>
 
-            <a
-                href="#contact"
-                onClick={() => setMenuOpen(false)}
-                className={`text-2xl font-semibold text-white my-4 transform transition-transform duration-300
+      <a
+        href="#contact"
+        onClick={() => setMenuOpen(false)}
+        className={`text-2xl font-semibold text-white hover:text-[#3498db] my-4 transform transition-transform duration-300
                     ${
-                        menuOpen ? "opacity-100 translate-y-0" : "opacity-0 translate-y-5"
+                      menuOpen
+                        ? "opacity-100 translate-y-0"
+                        : "opacity-0 translate-y-5"
                     }
                     `}
-            >
-                Contact
-            </a>            
-        </div>
-    );
-}
+      >
+        Contact
+      </a>
+    </div>
+  );
+};

@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import './App.css';
 import './index.css';
 import { LoadingScreen } from './components/LoadingScreen';
 import { Navbar } from './components/Navbar';
@@ -9,6 +8,7 @@ import { About } from './components/sections/About';
 import { Experience } from './components/sections/Experience';
 import { Projects } from './components/sections/Projects';
 import { Contact } from './components/sections/Contact';
+import Footer from './components/Footer';
 
 
 function App() {
@@ -18,7 +18,7 @@ function App() {
   return (
     <>
       {!isLoaded && <LoadingScreen onComplete={() => setIsLoaded(true)}/>}
-      <div className={`min-h-screenv hidden transition-opacity duration-700 ${isLoaded ? "opacity-0" : "opacity-100"} bg-black text-gray-100`}></div>
+      <div className={`min-h-screen hidden transition-opacity duration-700 ${isLoaded ? "opacity-0" : "opacity-100"} bg-black text-gray-100`}></div>
       <Navbar menuOpen={menuOpen} setMenuOpen={setMenuOpen}/>
       <MobileMenu menuOpen={menuOpen} setMenuOpen={setMenuOpen}/>
       <Home />
@@ -26,6 +26,7 @@ function App() {
       <Experience />
       <Projects />
       <Contact />
+      <Footer />
     </>
   )
 }
